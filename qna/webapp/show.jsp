@@ -32,18 +32,18 @@
 	<h3>답변</h3>
 	<div class="answerWrite">
 	<form method="post">
-	<input type="hidden" name="questionId" value="${question.questionId}">
-    <p>
-        <label for="author">이름: </label>
-        <input type="text" name="writer" id="writer" />
-    </p>
-    <p>
-        <label for="content">내용 : </label>
-        <textarea name="content" id="content"></textarea>
-    </p>
-    <p>
-        <input type="submit" value="저장" />
-    </p>
+		<input type="hidden" name="questionId" value="${question.questionId}">
+	    <p>
+	        <label for="author">이름: </label>
+	        <input type="text" name="writer" id="writer" />
+	    </p>
+	    <p>
+	        <label for="content">내용 : </label>
+	        <textarea name="content" id="content"></textarea>
+	    </p>
+	    <p>
+	        <input type="submit" value="저장" />
+	    </p>
     </form>
     </div>
     
@@ -81,7 +81,22 @@
 					저는 같은 맥락인거 같은데 ^^;;
 					아 그러고 보니 "안정"이라고 되어있네요. 저건 다른 의미인가.. ^^;;
 	            </div>
-	        </div>	    
+	        </div>
+	        
+	        <c:forEach var="answer" items="${answers }">
+		        <div class="comment">
+		            <div class="comment-metadata">
+		                <span class="comment-author">by ${answer.writer },</span>
+		                <span class="comment-date">
+		                    ${answer.createdDate }
+		                </span>
+		            </div>
+		            <div class="comment-content">
+		                <div class="about">내용 : </div>
+		                ${answer.contents }
+		            </div>
+		        </div>	
+	        </c:forEach>   
 	</div>
 	<!-- comments end -->
 	

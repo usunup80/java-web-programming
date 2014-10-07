@@ -24,6 +24,15 @@
 		<url-pattern>*.next</url-pattern>
 	</servlet-mapping>
 	
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>core.web.filter.CharacterEncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>*.next</url-pattern>
+	</filter-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
